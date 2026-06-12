@@ -138,3 +138,5 @@ git config --global init.defaultBranch main
 ```
 
 Ahora que ya está confgigurado se puede pasar a crear un repositorio.
+
+Para plantear un Vault compartido ver [[Vault compartido]]
