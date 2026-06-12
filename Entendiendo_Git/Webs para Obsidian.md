@@ -5,3 +5,4 @@
 [Montar obsidian en Git](https://forum.obsidian.md/t/the-easiest-way-to-setup-obsidian-git-to-backup-notes/51429)
 
 [Explicación rápida para Obsidian Git](https://forum.obsidian.md/t/the-easiest-way-to-setup-obsidian-git-to-backup-notes/51429)
+
