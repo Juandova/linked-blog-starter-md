@@ -3,7 +3,7 @@ Para la creación de toda la documentación se ha hecho uso de los tutoriales de
 *¿Qué es?*
 Es un sistema de control de versiones
 ## Introducción
-Este documento describe parámetros clave y definiciones sin entrar al uso oficial de Git. En caso de ya conocer los términos se recomienda saltar al documento [[Git Basico]]
+Este documento describe parámetros clave y definiciones sin entrar al uso oficial de Git. En caso de ya conocer los términos se recomienda saltar al documento [[Git Básico]]
 ##### Conceptos clave:
 - *Repositorio*: Una carpeta en la que git sigue tu proyecto e historia del mismo
 - *Clon*: Es una copia de un repositorio remoto en tu máquina
@@ -141,4 +141,4 @@ Ahora que ya está confgigurado se puede pasar a crear un repositorio.
 
 >[!tldr] Siguientes pasos
 $\hookrightarrow$ Para plantear un Vault compartido ver [[Vault compartido]]
-$\hookrightarrow$ Para continuar comenzar con la creación de un repositorio ver [[Git Basico]].
+$\hookrightarrow$ Para continuar comenzar con la creación de un repositorio ver [[Git Básico]].
