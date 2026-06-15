@@ -2,15 +2,13 @@
 tags:
   - MASTER/MUSANTTA
   - enjambres
-Asignatura:
 date: 2026-05-07
-Unidad:
 ---
 > [!abstract]
 > Esta nota documenta el proceso para instalar el entorno de desarrollo de PX4 Autopilot en Windows utilizando WSL. Incluye:
-> - Instalación de WSL
-> - Instalación de PX4
-> - Instalación y conexión con QGroundControl
+> - Instalación de [[WSL]]
+> - Instalación de [[PX4]]
+> - Instalación y conexión con [[QGroundControl]]
 > - Integración con MatLab
 
 ---
