@@ -108,3 +108,41 @@ En caso de no usar el -m se abre un editor con diferentes líneas. Se puede hace
     Utiliza `git commit --amend -m "Corrected message"` para arreglarlo.
 - **Has hecho commit de un archivo erróneo?**  
     Puedes utilizar `git reset --soft HEAD~1` para deshacer el útlimo commit manteniendo los cambios establecidos.
+
+## Tags
+[Link a la referencia](https://www.w3schools.com/git/git_tagging.asp?remote=github)
+Un tag en git es como una etiqueta o un marcador para un commit en específico. Los tags se utilizan normalmente para marcar puntos importantes en el historial del proyecto como versiones (v1.0, v2.0...). Los tags son una manera simple y efectiva de mantener un seguimiento de las versiones y compartirlas con el resto de usuarios o miembros de un equipo.
+
+Un **lightweight tag** o "etiqueta ligera" es simplemente un nombre para un commit. Es rápido, y simple pero añade información que puede ser clave. Un **annotated tag** en cambio guarda otros datos como autor, fecha y mensaje. Es recomendable si se trabaja con un equipo de personas.
+
+Los comandos en este apartado son:
+- `git tag <tagname>` - Crea un  "lightweight tag"
+- `git tag -a <tagname> -m "message"` - Crea un "annotated tag"
+- `git tag <tagname> <commit-hash>` -Añade un tag a un commit específico
+	*(El hash se puede obtener con el comando ``git log --oneline``)*
+- `git tag` - List tags
+- `git show <tagname>` - Show tag details
+- `git tag -d <tagname>` - Elimina el tag
+
+Por defecto, las tags únicamente aparecen en tu ordenador. Para que otros puedan verlo se deberá hacer un "push". Para subir un tag:
+
+```shell title:"Subir un tag"
+git push origin v1.0
+```
+
+Para subirlos todos:
+```shell title:"Subir todos los tags"
+git push --tags
+```
+
+## Stash
+[Link a la referencia](https://www.w3schools.com/git/git_stash.asp?remote=github)
+(No me parece una herramienta particularmente útil)
+Un stash permite rápidamente cambiar entre tareas o arreglar un bug pero el trabajo no está listo para hacer un commit. Un stash permite esconder los cambios a los que no se ha aplicado un commit y volver a un directorio limpio. Puedes volver atrás para reestablecer los cambios posteriormente.
+
+Casos de uso:
+- **Cambiar de rama de manera segura:** Guarda el trabajo antes de cambiar de rama
+- **Manejo de emergencias:** Se puede hacer un stash para hacer un arreglo urgente y luego restaurarlo.
+- **Mantener el trabajo  en progreso seguro:** Evita commits innecesarios o pérdida de cambios.
+
+
