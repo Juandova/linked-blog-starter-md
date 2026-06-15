@@ -142,3 +142,4 @@ Ahora que ya está confgigurado se puede pasar a crear un repositorio.
 >[!tldr] Siguientes pasos
 $\hookrightarrow$ Para plantear un Vault compartido ver [[Vault compartido]]
 $\hookrightarrow$ Para continuar comenzar con la creación de un repositorio ver [[Git Básico]].
+
