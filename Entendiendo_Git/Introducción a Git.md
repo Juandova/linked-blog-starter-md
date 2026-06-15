@@ -1,9 +1,9 @@
+Para la creación de toda la documentación se ha hecho uso de los tutoriales de la web[W3School](https://www.w3schools.com/git/#) y la [ documentación oficial de Git](https://git-scm.com/docs).
 
-# Git:
 *¿Qué es?*
 Es un sistema de control de versiones
-
 ## Introducción
+Este documento describe parámetros clave y definiciones sin entrar al uso oficial de Git. En caso de ya conocer los términos se recomienda saltar al documento [[Git Basico]]
 ##### Conceptos clave:
 - *Repositorio*: Una carpeta en la que git sigue tu proyecto e historia del mismo
 - *Clon*: Es una copia de un repositorio remoto en tu máquina
@@ -11,7 +11,7 @@ Es un sistema de control de versiones
 - *Commit*: Hacer un guardado instantáneo de los cambios establecidos
 - *Branch*: Trabajar en distintas versiones, o características al mismo tiempo
 - *Merge*: Combinar cambios de diferentes "Branches"
-- *Pull*:Obtener los útimos cambios de un repositorio remoto
+- *Pull*: Obtener los útimos cambios de un repositorio remoto
 - *Push*: Mandar tus cambios a un repositorio remoto
 ##### Pasos para trabajar con Git:
 1. Inicializar Git en una carpeta conviertiendola en un repositorio
@@ -139,4 +139,6 @@ git config --global init.defaultBranch main
 
 Ahora que ya está confgigurado se puede pasar a crear un repositorio.
 
-Para plantear un Vault compartido ver [[Vault compartido]]
+>[!tldr] Siguientes pasos
+$\hookrightarrow$ Para plantear un Vault compartido ver [[Vault compartido]]
+$\hookrightarrow$ Para continuar comenzar con la creación de un repositorio ver [[Git Basico]].
