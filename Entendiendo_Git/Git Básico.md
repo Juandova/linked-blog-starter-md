@@ -135,7 +135,7 @@ Para subirlos todos:
 git push --tags
 ```
 
-## Stash
+## Stash (Esconder)
 [Link a la referencia](https://www.w3schools.com/git/git_stash.asp?remote=github)
 (No me parece una herramienta particularmente útil)
 Un stash permite rápidamente cambiar entre tareas o arreglar un bug pero el trabajo no está listo para hacer un commit. Un stash permite esconder los cambios a los que no se ha aplicado un commit y volver a un directorio limpio. Puedes volver atrás para reestablecer los cambios posteriormente.
@@ -145,4 +145,15 @@ Casos de uso:
 - **Manejo de emergencias:** Se puede hacer un stash para hacer un arreglo urgente y luego restaurarlo.
 - **Mantener el trabajo  en progreso seguro:** Evita commits innecesarios o pérdida de cambios.
 
+- `git stash` - Esconde  los cambios en un stash
+- `git stash push -m "message"` - Igual al anterior pero con un mensaje
+- `git stash list` - Muestra todos los stashes
+- `git stash branch <branchname>` - Crea una rama a partir de un stash
+-  `git stash show` muestra el cambio realizado en el último stash.  Para mostrar las líneas exactas que han cambiado desde el último stash se puede utilizar ``git stash show -p``.
 
+Los cambios realizados se guardan en un "Stack" , es decir, se van apilando unos encima de otros, siendo el más reciente el que está por encima y va bajando.
+
+ Otros comandos:
+
+- ``git stash apply``- Reestablece los cambios del último stash manteniendo el stash en el stack.
+- `` git stash apply stash@{n}``- Permite reestablecer un stash específico
