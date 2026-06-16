@@ -10,7 +10,7 @@ El resto de pasos es igual pero cambiando el token a la hora de añadir el link.
 
 >[!caution] El link debe quedar de esta forma!
 >```
->https://<Usuario_Compartido>@github.com/<Usuario_original>/<Repositorio_original>.git
+>https://<token_Usuario_Compartido>@github.com/<Usuario_original>/<Repositorio_original>
 >```
 
 Y se sigue con el resto del tutorial de la misma forma,  crear carpeta, y reiniciar.
