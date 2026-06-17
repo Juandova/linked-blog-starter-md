@@ -25,6 +25,7 @@ pkill -f gazebo
 pkill -f MicroXRCEAgent
 pkill -f QGroundControl
 pkill -f gnome-terminal
+pkill -f "swarm_pkg drone_node"
 ```
 
 
