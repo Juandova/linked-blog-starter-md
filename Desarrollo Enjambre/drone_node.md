@@ -24,7 +24,7 @@ date: 2026-06-17
 ## Ejecución
 
 ```sh title:"Ejecución"
-ros2 run swarm_pkg swarm_agent_node --ros-args -p drone_id:=0
+ros2 run swarm_pkg drone_node --ros-args -p drone_id:=0
 ```
 
 

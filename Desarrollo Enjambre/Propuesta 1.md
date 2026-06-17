@@ -20,7 +20,7 @@ date: 2026-06-16
 
 
 ```sh title:"Ejecución"
-ros2 run swarm_pkg swarm_agent_node --ros-args -p drone_id:=0
+ros2 run swarm_pkg drone_node --ros-args -p drone_id:=0
 ```
 
 
@@ -41,7 +41,7 @@ ros2 topic pub --once /px4_swarm/command std_msgs/msg/String "{data: TAKEOFF}"
 ---
 ### Fase 2
 
-- [ ] Crear `swarm_agent`.
+- [x] Crear [[drone_node]].
 
 Una copia reducida de tu `manual_control_node`:
 
@@ -53,8 +53,9 @@ Una copia reducida de tu `manual_control_node`:
 
 por namespace.
 
----
+- [ ] Ampliar [[drone_node]] para control de posición
 
+---
 ### Fase 3
 
 - [ ] Crear `swarm_manager`.
