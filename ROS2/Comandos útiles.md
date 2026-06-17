@@ -252,7 +252,13 @@ ros2 topic echo /fmu/out/vehicle_attitude
 ```
 
 ---
+### Mostrar frecuencia de Topics
 
+```sh
+ros2 topic hz /fmu/out/vehicle_odometry
+```
+
+---
 ### Listar nodos
 
 ```sh
