@@ -13,7 +13,7 @@ date: 2026-06-10
 ros2 launch swarm_launch swarm_launch.launch.py num_drones:=5 cols:=5 spacing:=2
 ```
 
-```sh title:"Ejecución cambiando coordenadas"
+```sh title:"Ejecución con todos los argumentos"
 ros2 launch swarm_launch swarm_launch.launch.py num_drones:=5 cols:=5 spacing:=2 home_lat:=39.48053 home_lon:=-0.33928 home_alt:=9 show_drone_terminals:=false
 ```
 
