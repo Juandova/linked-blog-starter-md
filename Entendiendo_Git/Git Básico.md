@@ -283,9 +283,27 @@ git merge rama_prueba
 
 - **Siempre se debe realizar un commit o stash de manera previa al merge**. 
 - **Es conveniente ir haciendo merge de la rama principal para evitar conflictos**
-- 
->[!tip] Commit + Merge
-> ```sh
- git merge --no-ff prueba.txt````
 
+>[!tip] Commit + Merge
+> Normalmente el Merge no genera ningún tipo de commit, sin embargo el `--no-ff` añade un commit durante el proceso. 
+> ```sh
+ git merge --no-ff prueba.txt
+ >```
+ >Para un commit que combine todos los cambios se puede utilizar el comando:
+ >```shell
+git merge --squash rama_prueba
+>```
+ 
+ 
+En caso de problemas por conflitos se puede utilizar el comando `--abort`
+
+```sh
+git merge --abort
+```
+
+La aparición de un conflicto se marca de manera automática por Git en el documento conflictado, apareciendo líneas como  <<<<< HEAD y **= = = =**.  Tras la resolución del conflicto se hace un stage y commit de los cambios.
+
+##### Listado de Comandos:
+- `git merge <branch>`
+- `git merge --abort`
 
