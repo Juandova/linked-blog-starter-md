@@ -31,9 +31,9 @@ pkill -f gnome-terminal
 ## Explicación del Código
 
 > [!summary]  `*.launch.py`
-> **Basicamente son descripciones declarativas que [[ROS 2]] ejecuta mediante un motor de lanzamiento (`launch`)**.
+> **Se trata de descripciones declarativas que [[ROS 2]] ejecuta mediante un motor de lanzamiento (`launch`)**.
 
-> [!question]  ¿quién demonios está llamando a estas funciones?
+> [!question]  ¿Quién está llamando a estas funciones?
 > No las llamas tú. Las llama el motor de `launch` de [[ROS 2 ]]cuando encuentra las acciones correspondientes dentro del `LaunchDescription`.
 
 > [!hint] Es decir, es una lista de tareas para ROS
