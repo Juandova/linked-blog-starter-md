@@ -82,6 +82,7 @@ Un *commit* es un punto de guardado en tu proyecto. Hace un guardado instantáne
 - `git commit -m "message"` - Cambios de un commit establecido con un mensage (preferiblemente descriptivo)
 - `git commit -a -m "message"` - Hace un commit a todos los cambios seguidos (Se salta el establecimiento).
 - `git log` - Para ver el historial de cambios
+	- (utilizando `/` seguido de la búsqueda y luego presionando enter se puede hacer una búsqueda de los commits, `n` se puede utilizar para buscar la siguiente coincidencia. Para salir se puede utiliza q) 
 - `git log --oneline` -Versión más corta del log en una línea.
 - `git log --stat` -Muestra los archivos cambiados en el último commit.
 
@@ -137,7 +138,9 @@ git push --tags
 
 ## Stash (Esconder)
 [Link a la referencia](https://www.w3schools.com/git/git_stash.asp?remote=github)
-(No me parece una herramienta particularmente útil)
+
+*(No me parece una herramienta muy importante)*
+
 Un stash permite rápidamente cambiar entre tareas o arreglar un bug pero el trabajo no está listo para hacer un commit. Un stash permite esconder los cambios a los que no se ha aplicado un commit y volver a un directorio limpio. Puedes volver atrás para reestablecer los cambios posteriormente.
 
 Casos de uso:
@@ -155,5 +158,134 @@ Los cambios realizados se guardan en un "Stack" , es decir, se van apilando unos
 
  Otros comandos:
 
-- ``git stash apply``- Reestablece los cambios del último stash manteniendo el stash en el stack.
-- `` git stash apply stash@{n}``- Permite reestablecer un stash específico
+- `git stash apply`- Reestablece los cambios del último stash manteniendo el stash en el stack.
+- ` git stash apply stash@{n}`- Permite reestablecer un stash específico
+- `git stash pop`- Aplica el último stash y lo elimina del stack
+- `git stash drop`- Elimina un stash específico cuando ya no lo necesitas
+- `clear all stashes`- Elimina todos los stashes de una vez
+- `git stash branch`- Crea un nuevo branch y le aplica un stash.
+
+Es importante que el mensaje del stash deje claro qué se está probando haciendo uso del mismo.
+
+## Historial de git
+[Link a la referencia](https://www.w3schools.com/git/git_history.asp?remote=github)
+
+Git por defecto guarda un registro de cada cambio en el repositorio. Se pueden utilizar comandos para ver qué y quién ha realizado cambios en el repositorio. 
+
+- `git log` - Enseña todos los commits realizados
+	- (utilizando `/` seguido de la búsqueda y luego presionando enter se puede hacer una búsqueda de los commits, `n` se puede utilizar para buscar la siguiente coincidencia. Para salir se puede utiliza q) 
+- `git log --oneline` - Enseña un resumen de los commits con su hash en una línea
+- `git log --author="Alice"`- Busca commits realizados por un autor
+- `git log --since="2 weeks ago"`
+- `git log --since="2 weeks ago"` -Muestra únicamente los commits que se han realizado desde hace 2 semanas
+- `git log --stat` - Muestra qué archivos han sido cambiados en cada commit y cuantas líneas se han añdadido o borrado
+- `git log --graph` - Muestra un gráfico simple con el historial de la rama con la que se está trabajando.
+
+- `git show <commit>` - Muestra todos los detalles de un commit específico
+- `git diff` - Muestra los commits que no se han establecido
+- `git diff --staged` - Enseña los cambios establecidos en el commit
+- `git diff <commit1> <commit2>` - Compara 2 commits
+
+## Ayuda en git
+[Link a la referencia](https://www.w3schools.com/git/git_help.asp?remote=github)
+
+En este apartado se describen los comandos de ayuda para Git.
+
+- `git help <command>` - Enseña la página de manual para un comando
+- `git <command> --help` - Misma que el comando previo
+- `git <command> -h` - Resumen rápido de opciones
+- `git help --all` - Genera una lista de todos lo comandos posbles
+- `git help -g` - List guides and concepts
+
+## Branch (Rama)
+[Link a la referencia](https://www.w3schools.com/git/git_branch.asp?remote=github)
+
+En git, una rama es similar a la generación de un workspace paralelo en el que se pueden probar diferentes ideas para un mismo código. Normalmente se usa para arreglar bugs, desarrollo de herramientas y experimentación. (*La existencia de esto es la razón por la que pienso que el stash no es tan útil*). Al acabar los cambios de la rama se puede hacer un Merge que permite añadir todo a la rama principal.
+
+Este apartado es MUY IMPORTANTE, así que, para comprobar que todo lo que se ha aprendido previamente. Para ello se propone una práctica:
+
+Primero se genera un documento dentro del workspace en el que se está trabajando:
+
+```sh title:"Se crea un archivo y se edita"
+cd workspace
+touch prueba.txt
+nano prueba.txt
+```
+
+Se añade el texto previsto y se hace `ctrl+x`e `y` para guardar y salir. Ahora entrando en terreno de git:
+
+```sh title:"add+commit"
+git add prueba.txt
+git commmit prueba.txt 
+```
+
+Se guarda y cierra el editor de texto y ya está listo.
+
+**Crear un branch:** 
+
+```sh: title:"Creacion de rama"
+git branch rama_prueba
+git branch
+```
+
+El segundo comando muestra todas las ramas de repositorio, mostrará  la maestra y la nueva. La `*` al lado de las ramas indica la posición en la que se está trabajando. Para moverse de la rama que se está utilizando a la nueva se utiliza el comando `checkout`.
+
+```sh title:"Cambio de rama"
+git checkout rama_prueba
+git branch
+```
+
+Desde este momento los cambios no afectan a la rama principal y se muestra el `*`
+en la nueva rama. En este momento se hace cambios sobre el txt generado con nano u otra herramienta. Ahora se comprueba el estado del git:
+
+>[!tip] Cambio directo a la rama desde la creación
+>Se puede cambiar directamente a la rama que se ha generado con el comando `-b`
+>```sh title:ejemplo
+>git branch -b rama_prueba
+>```
+
+```sh 
+git status
+```
+
+Se muestran todos los cambios realizados en el Git. Por último se realiza un commit a la rama:
+
+```sh
+git commit -m "Se han anyadido x cambios"
+```
+
+Se utiliza `-d` para eliminar las ramas:
+
+```sh
+git branch -d rama_prueba
+```
+
+##### Listado de comandos:
+- `git branch -name`- Crear la rama
+- `git branch -m old-name new-name` - Renombrar una rama
+-  `git branch`- Listar todas las ramas
+-  `git checkout branch-name` or `git switch branch-name` -Cambiar de rama de trabajo
+-  `git branch -D branch-name` - Forzar eliminado de una rama
+- `git status` - Muestra la rama en la que te encuentras con sus cambios
+
+## Merge (Unir)
+[Link a la referencia](https://www.w3schools.com/git/git_security_ssh.asp?remote=github)
+Este apartado parte del anterior [Branch(Rama)]. 
+
+Hacer un Merge (o Unir) significa combinar cambios de una rama a otra. Así es como el trabajo se une tras trabajar por un tiempo en otra rama.  
+
+Normalmente se cambia primero a la rama en la cual quieres unir tus cambios de la rama secundaria, luego se lanza el comando de Merge con el nombre de la rama secundaria cuyos cambios se quieren unir.
+
+```sh
+git checkout master
+git merge rama_prueba
+```
+
+- **Siempre se debe realizar un commit o stash de manera previa al merge**. 
+- **Es conveniente ir haciendo merge de la rama principal para evitar conflictos**
+- 
+>[!tip] Commit + Merge
+> ```sh
+ git merge --no-ff prueba.txt````
+
+
