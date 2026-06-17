@@ -39,6 +39,16 @@ prefix = `px4_0/fmu/`  (en función del dron)
 
 ### Publisher
 
+- prefix + `/in/offboard_control_mode`
+
+- prefix + `/in/trajectory_setpoint`
+
+ - prefix + `/in/vehicle_command`
+
+### subscription
+
+- `/px4_swarm/command`
+
 - prefix + `/out/vehicle_status_v4`
 
 - prefix + `/out/vehicle_local_position_v1`
@@ -48,16 +58,6 @@ prefix = `px4_0/fmu/`  (en función del dron)
 - prefix + `/out/vehicle_land_detected`
 
 - prefix + `/out/vehicle_command_ack_v1`
-
-### subscription
-
-- `/px4_swarm/command`
-
-- prefix + `/in/offboard_control_mode`
-
-- prefix + `/in/trajectory_setpoint`
-
- - prefix + `/in/vehicle_command`
 
 ---
 
