@@ -1,9 +1,11 @@
 ---
 tags:
   - MASTER/MUSANTTA/Practicas
-  - drones/enjambre/ROS
-date: 2026-06-16
+  - drones/enjambre
+date: 2026-06-17
 ---
+> [!summary] Nodo con la responsabilidad de controlar cada dron de forma individual. Recibiendo las intrucciones de control del enjambre
+
 
 
 
@@ -19,6 +21,8 @@ date: 2026-06-16
 ```
 
 
+## Ejecución
+
 ```sh title:"Ejecución"
 ros2 run swarm_pkg swarm_agent_node --ros-args -p drone_id:=0
 ```
@@ -28,73 +32,33 @@ ros2 run swarm_pkg swarm_agent_node --ros-args -p drone_id:=0
 ros2 topic pub --once /px4_swarm/command std_msgs/msg/String "{data: TAKEOFF}"
 ```
 
-
-
 ---
-## hoja de ruta:
+## Topics
 
-### Fase 1
+prefix = `px4_0/fmu/`  (en función del dron)
 
-- [x]  [[Launch enjambre]]
+### Publisher
 
+- prefix + `/out/vehicle_status_v4`
 
----
-### Fase 2
+- prefix + `/out/vehicle_local_position_v1`
 
-- [ ] Crear `swarm_agent`.
+- prefix + `/uot/vehicle_odometry`
 
-Una copia reducida de tu `manual_control_node`:
+- prefix + `/out/vehicle_land_detected`
 
-- arm
-- disarm
-- offboard
-- takeoff
-- land
+- prefix + `/out/vehicle_command_ack_v1`
 
-por namespace.
+### subscription
 
----
+- `/px4_swarm/command`
 
-### Fase 3
+- prefix + `/in/offboard_control_mode`
 
-- [ ] Crear `swarm_manager`.
+- prefix + `/in/trajectory_setpoint`
 
-Comandos:
-
-```
-armtakeoffland
-```
-
-para todos.
+ - prefix + `/in/vehicle_command`
 
 ---
 
-### Fase 4
 
-Mover todos:
-
-```
-/swarm/cmd_vel
-```
-
----
-
-### Fase 5
-
-Mover uno o todos:
-
-```
-selected_id
-```
-
----
-
-### Fase 6
-
-Líder-seguidor.
-
----
-
-### Fase 7
-
-Formaciones.
