@@ -53,7 +53,7 @@ prefix = `px4_0/fmu/`  (en función del dron)
 
 - prefix + `/out/vehicle_local_position_v1`
 
-- prefix + `/uot/vehicle_odometry`
+- prefix + `/out/vehicle_odometry`
 
 - prefix + `/out/vehicle_land_detected`
 

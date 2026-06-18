@@ -13,3 +13,8 @@ Abre tu terminal y utiliza `stty` indicando el puerto y la velocidad deseada. Po
 Una vez configurado correctamente Comando stty de Linux con Ejemplos Prácticos, puedes usar `cat` para empezar a visualizar el flujo de datos en tiempo real:
 
 `cat /dev/ttyUSB0` [[1](https://www.tlm.unavarra.es/~daniel/docencia/lpr/lpr08_09/practicas/practica1.pdf)]
+
+
+```sh title:"Utiles"
+sudo fuser -v /dev/ttyUSB0
+```
