@@ -74,7 +74,6 @@ TimerAction(
 )
 ```
 
-
 #### `_terminal()`
 
 > [!info] Fabrica un objeto del tipo `ExecuteProcess(...)`
