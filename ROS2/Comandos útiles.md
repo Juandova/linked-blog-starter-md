@@ -67,23 +67,23 @@ make px4_sitl gz_standard_vtol
 PX4_SYS_AUTOSTART=4001 PX4_GZ_MODEL=gz_x500 ./build/px4_sitl_default/bin/px4
 ```
 
-## Compilación
+### Compilación
 
-### Compilar SITL
+#### Compilar SITL
 
 ```sh
 make px4_sitl
 ```
 
 ---
-### Limpiar compilación
+#### Limpiar compilación
 
 ```sh
 make clean
 ```
 
 ---
-### Limpiar completamente
+#### Limpiar completamente
 
 ```sh
 make distclean

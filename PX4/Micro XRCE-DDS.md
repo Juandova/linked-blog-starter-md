@@ -21,6 +21,10 @@ El Agent:
 - Publica y suscribe tópicos [[DDS]]/[[ROS 2]].
 - Actúa como puente hacia [[Fast DDS]].
 
+```sh title:"Inicio para dron físico"
+MicroXRCEAgent serial --dev /dev/ttyUSB0 -b 57600
+```
+
 ---
 ## Documentación
 
