@@ -266,6 +266,18 @@ ros2 node list
 ```
 
 ---
+### Mostrar estructura del mensaje
+
+```sh 
+ros2 interface proto <topic>
+```
+
+```sh
+ros2 interface show px4_msgs/msg/VehicleCommand
+```
+
+
+
 
 ## QGroundControl
 
@@ -293,30 +305,6 @@ Vehicle Setup
 ```
 
 ---
-## Directorios útiles
-
-### Repositorio PX4
-
-```sh
-~/PX4-Autopilot
-```
-
----
-### Logs SITL
-
-```sh
-~/PX4-Autopilot/build/px4_sitl_default/rootfs/log
-```
-
----
-### Mensajes [[uORB]]
-
-```sh
-~/PX4-Autopilot/msg
-```
-
----
-
 ## Referencias rápidas
 
 [[PX4]]  

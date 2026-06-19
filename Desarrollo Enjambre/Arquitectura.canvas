@@ -7,7 +7,7 @@
 		{"id":"1475504d70e8b205","type":"text","text":"[[PX4]]","x":-92,"y":140,"width":105,"height":60},
 		{"id":"631cd01091316b53","type":"text","text":"[[PX4]]","x":208,"y":140,"width":105,"height":60},
 		{"id":"a9d315f01e39397b","type":"text","text":"[[swarm_manager_node]]","x":-152,"y":-300,"width":225,"height":60},
-		{"id":"03f357593ff235f0","x":188,"y":-300,"width":232,"height":60,"type":"text","text":"Formación"}
+		{"id":"03f357593ff235f0","type":"text","text":"Formación","x":188,"y":-300,"width":152,"height":60}
 	],
 	"edges":[
 		{"id":"d87241325df431b8","fromNode":"2aaf380545c61375","fromSide":"bottom","toNode":"98e5db360cdebf8c","toSide":"top"},
