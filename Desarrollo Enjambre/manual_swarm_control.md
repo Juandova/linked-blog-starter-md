@@ -1,5 +1,14 @@
 
 
+
+
+```sh 
+ros2 run swarm_pkg manual_swarm_control --ros-args -p num_drones:=3
+```
+
+
+---
+
 El `manual_swarm_control` será cliente de:
 
 ```
