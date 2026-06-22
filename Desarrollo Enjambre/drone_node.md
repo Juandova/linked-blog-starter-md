@@ -34,30 +34,30 @@ ros2 topic pub --once /px4_swarm/command std_msgs/msg/String "{data: TAKEOFF}"
 %%
 
 ```sh title:"Prueba de ejecución de 3 drones"
-ros2 action send_goal /drone_0/takeoff swarm_pkg/action/Takeoff "{altitude: 2.0}" &
-ros2 action send_goal /drone_1/takeoff swarm_pkg/action/Takeoff "{altitude: 2.0}" &
-ros2 action send_goal /drone_2/takeoff swarm_pkg/action/Takeoff "{altitude: 2.0}" &
+ros2 action send_goal /drone_0/action/takeoff swarm_pkg/action/Takeoff "{altitude: 2.0}" &
+ros2 action send_goal /drone_1/action/takeoff swarm_pkg/action/Takeoff "{altitude: 2.0}" &
+ros2 action send_goal /drone_2/action/takeoff swarm_pkg/action/Takeoff "{altitude: 2.0}" &
 wait
 ```
 
 ```sh
-ros2 action send_goal /drone_0/land swarm_pkg/action/Land "{}" &
-ros2 action send_goal /drone_1/land swarm_pkg/action/Land "{}" &
-ros2 action send_goal /drone_2/land swarm_pkg/action/Land "{}" &
+ros2 action send_goal /drone_0/action/land swarm_pkg/action/Land "{}" &
+ros2 action send_goal /drone_1/action/land swarm_pkg/action/Land "{}" &
+ros2 action send_goal /drone_2/action/land swarm_pkg/action/Land "{}" &
 wait
 ```
 
 ```sh title:"Prueba de movimiento"
-ros2 topic pub --once /drone_0/target_pose geometry_msgs/msg/PoseStamped "{pose: {position: {x: 5.0, y: 0.0, z: -9.0}}}"
+ros2 topic pub --once /drone_0/in/target_pose geometry_msgs/msg/PoseStamped "{pose: {position: {x: 5.0, y: 0.0, z: -9.0}}}"
 ```
 
 > [!warning]  Ojo
 > PX4 está usando el sistema de coordenadas **NED** (_North-East-Down_).
 
 ```sh title:"Prueba de rotación"
-ros2 topic pub --once /drone_0/target_yaw std_msgs/msg/Float32 "{data: 3.14}" &
-ros2 topic pub --once /drone_1/target_yaw std_msgs/msg/Float32 "{data: 3.14}" &
-ros2 topic pub --once /drone_2/target_yaw std_msgs/msg/Float32 "{data: 3.14}" &
+ros2 topic pub --once /drone_0/in/target_yaw std_msgs/msg/Float32 "{data: 3.14}" &
+ros2 topic pub --once /drone_1/in/target_yaw std_msgs/msg/Float32 "{data: 3.14}" &
+ros2 topic pub --once /drone_2/in/target_yaw std_msgs/msg/Float32 "{data: 3.14}" &
 wait
 ```
 
@@ -89,10 +89,27 @@ prefix = `px4_0/fmu/`  (en función del dron)
 
 - prefix + `/out/vehicle_command_ack_v1`
 
+
 ---
 
+> [!success]  Resultado con 3 drones: 
+
 ```
-/drone_0/target_position
-/drone_1/target_position
-/drone_2/target_position
+/drone_0/in/target_pose
+/drone_0/in/target_yaw
+/drone_0/out/pose
+/drone_0/action/takeoff
+/drone_0/action/land
+
+/drone_1/in/target_pose
+/drone_1/in/target_yaw
+/drone_1/out/pose
+/drone_1/action/takeoff
+/drone_1/action/land
+
+/drone_2/in/target_pose
+/drone_2/in/target_yaw
+/drone_2/out/pose
+/drone_2/action/takeoff
+/drone_2/action/land
 ```
