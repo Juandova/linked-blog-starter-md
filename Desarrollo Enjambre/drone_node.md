@@ -107,3 +107,147 @@ prefix = `px4_0/fmu/`  (en función del dron)
 /drone_2/action/takeoff
 /drone_2/action/land
 ```
+
+
+---
+
+## Responsabilidad
+
+El `drone_node` es la capa de abstracción entre el sistema de enjambre y PX4.
+
+Su función es ocultar todos los detalles internos de PX4 (topics FMU, mensajes específicos, modos de vuelo, comandos MAVLink, sistema NED, etc.) y exponer una interfaz ROS2 sencilla basada en:
+
+- Actions para órdenes discretas.
+    
+- Topics para consignas continuas.
+    
+- Telemetría simplificada del estado del dron.
+    
+
+Cada instancia de `drone_node` controla un único vehículo PX4.
+
+Por ejemplo:
+
+```
+drone_0 -> PX4 instancia 0
+drone_1 -> PX4 instancia 1
+drone_2 -> PX4 instancia 2
+```
+
+De esta forma, los nodos de nivel superior (`manual_swarm_control`, `swarm_manager`, algoritmos de formación, evitación de colisiones, etc.) no necesitan conocer detalles de PX4.
+
+---
+
+## Arquitectura
+
+```
+              swarm_manager_node
+                       │
+                       ▼
+                manual_swarm_control
+                       │
+       ┌───────────────┼───────────────┐
+       ▼               ▼               ▼
+   drone_0         drone_1         drone_2
+   drone_node      drone_node      drone_node
+       │               │               │
+       ▼               ▼               ▼
+      PX4             PX4             PX4
+```
+
+---
+
+## Interfaz pública
+
+### Actions
+
+Operaciones puntuales de alto nivel:
+
+```
+/drone_N/action/takeoff
+/drone_N/action/land
+```
+
+### Topics de entrada
+
+Consignas de movimiento:
+
+```
+/drone_N/in/target_pose
+```
+
+Tipo:
+
+```
+swarm_pkg/msg/DronePose
+```
+
+```
+x
+y
+z
+yaw
+```
+
+### Topics de salida
+
+Estado simplificado del vehículo:
+
+```
+/drone_N/out/pose
+```
+
+Tipo:
+
+```
+swarm_pkg/msg/DronePose
+```
+
+```text
+x
+y
+z
+yaw
+```
+
+---
+
+## Traducción de responsabilidades
+
+El `drone_node` traduce:
+
+```
+Takeoff Action
+        ↓
+VehicleCommand PX4
+
+Land Action
+        ↓
+VehicleCommand PX4
+
+DronePose
+        ↓
+TrajectorySetpoint
+
+VehicleOdometry
+        ↓
+DronePose
+```
+
+---
+
+## Filosofía de diseño
+
+El resto del enjambre nunca debería publicar directamente sobre:
+
+```
+/px4_x/fmu/in/*
+```
+
+ni subscribirse a:
+
+```
+/px4_x/fmu/out/*
+```
+
+Toda interacción con PX4 debe realizarse a través de `drone_node`.
