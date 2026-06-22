@@ -18,7 +18,7 @@ float32 altitude---bool success---uint32 completed_dronesuint32 total_drones
 Cuando alguien haga:
 
 ```
-ros2 action send_goal \/swarm/takeoff \swarm_pkg/action/SwarmTakeoff \"{altitude: 2.0}"
+ros2 action send_goal /swarm/takeoff swarm_pkg/action/SwarmTakeoff "{altitude: 2.0}"
 ```
 
 el manager:
