@@ -27,12 +27,6 @@ date: 2026-06-17
 ros2 run swarm_pkg drone_node --ros-args -p drone_id:=0
 ```
 
-%%
-```sh title:"Prueba de ejecución"
-ros2 topic pub --once /px4_swarm/command std_msgs/msg/String "{data: TAKEOFF}"
-```
-%%
-
 ```sh title:"Prueba de ejecución de 3 drones"
 ros2 action send_goal /drone_0/action/takeoff swarm_pkg/action/Takeoff "{altitude: 2.0}" &
 ros2 action send_goal /drone_1/action/takeoff swarm_pkg/action/Takeoff "{altitude: 2.0}" &
