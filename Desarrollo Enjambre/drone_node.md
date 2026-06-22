@@ -55,7 +55,10 @@ ros2 topic pub --once /drone_0/target_pose geometry_msgs/msg/PoseStamped "{pose:
 > PX4 está usando el sistema de coordenadas **NED** (_North-East-Down_).
 
 ```sh title:"Prueba de rotación"
-ros2 topic pub --once /drone_0/target_yaw std_msgs/msg/Float32 "{data: 3.14}"
+ros2 topic pub --once /drone_0/target_yaw std_msgs/msg/Float32 "{data: 3.14}" &
+ros2 topic pub --once /drone_1/target_yaw std_msgs/msg/Float32 "{data: 3.14}" &
+ros2 topic pub --once /drone_2/target_yaw std_msgs/msg/Float32 "{data: 3.14}" &
+wait
 ```
 
 
