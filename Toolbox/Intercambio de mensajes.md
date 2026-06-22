@@ -18,3 +18,15 @@ Una vez configurado correctamente Comando stty de Linux con Ejemplos Prácticos,
 ```sh title:"Utiles"
 sudo fuser -v /dev/ttyUSB0
 ```
+
+src/px4_msgs/
+
+src/px4_ros_com/
+
+build/
+
+install/
+
+log/
+
+.vscode/
