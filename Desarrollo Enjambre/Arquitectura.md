@@ -41,4 +41,6 @@ donde:
 - **[[DDS]]/[[uXRCE-DDS**]] → puente [[ROS 2]] ↔ [[PX4]].
 
 
+
+
 ![[Flujo de topics.excalidraw]]
