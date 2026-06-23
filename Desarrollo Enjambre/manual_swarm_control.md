@@ -5,7 +5,7 @@ tags:
 date: 2026-06-22
 ---
 > [!summary]  
-> Proporciona una interfaz de control manual para un enjambre de drones utilizando el teclado. 
+> Proporciona una interfaz de control manual de cada dron de un enjambre utilizando el teclado. 
 
 > [!todo] Motivación 
 > Realizar pruebas rápidas del sistema sin necesidad de implementar todavía algoritmos de formación
