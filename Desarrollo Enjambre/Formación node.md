@@ -14,7 +14,7 @@ date: 2026-06-23
 
 ### Topics creado:
 
-msg: `swarm_pkg/msg/Formation.msg`
+msg: `swarm_pkg/msg/DronePose.msg`
 
 ```msg
 float32 x

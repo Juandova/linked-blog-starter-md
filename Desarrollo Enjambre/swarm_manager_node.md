@@ -8,9 +8,26 @@ date: 2026-06-23
 > En base a [[Formación node]] y [[swarm_command_node]] calcula la posición de cada dron y manda instrucciones de movimiento a [[drone_node]]
 
 
+### Ejecución
 
+```sh title:"Prueba de ejecución"
+ros2 run swarm_pkg swarm_manager_node --ros-args -p num_drones:=3
+```
 
+```sh title:"Prueba de ejecución"
+ros2 topic pub --once /swarm/target_pose swarm_pkg/msg/DronePose "{x: 0.0, y: 0.0, z: -2.0, yaw: 0.0}"
+```
 ## topics
+
+#### suscribe
+
+`/swarm/target_pose`
+
+`drone_N/formacion`
+
+#### publica
+
+`/drone_N/in/target_pose`
 
 ## Responsabilidades 
 
