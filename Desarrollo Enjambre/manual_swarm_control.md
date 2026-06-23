@@ -4,17 +4,14 @@ tags:
   - MASTER/MUSANTTA/Practicas
 date: 2026-06-22
 ---
-
-
-
 > [!summary]  
 > Proporciona una interfaz de control manual para un enjambre de drones utilizando el teclado. 
 
-> [!tip] Motivación 
+> [!todo] Motivación 
 > Realizar pruebas rápidas del sistema sin necesidad de implementar todavía algoritmos de formación
 
 
-```sh 
+```sh title:"Ejemplo de ejecución"
 ros2 run swarm_pkg manual_swarm_control --ros-args -p num_drones:=3
 ```
 
@@ -30,7 +27,7 @@ El `manual_swarm_control` será cliente de:
 y publicador de:
 
 ```
-/drone_N/in/target_pose/drone_N/in/target_yaw
+/drone_N/in/target_pose/drone_N/in/target_pose
 ```
 
 y suscriptor de:
@@ -75,8 +72,7 @@ Su función es actuar como un operador humano capaz de:
 ```
 
 ---
-
-## Parámetros
+## Ejecución
 
 ```sh
 ros2 run swarm_pkg manual_swarm_control --ros-args -p num_drones:=3
