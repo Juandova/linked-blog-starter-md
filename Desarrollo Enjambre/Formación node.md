@@ -14,11 +14,9 @@ date: 2026-06-23
 
 ### Topics creado:
 
-msg: `swarm_pkg/msg/Formation.msg`
+msg: `swarm_pkg/msg/DronePose.msg`
 
 ```msg
-uint32 num_drones  
-  
 float32 x
 float32 y
 float32 z
