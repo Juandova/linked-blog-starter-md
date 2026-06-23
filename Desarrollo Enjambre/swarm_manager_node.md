@@ -1,4 +1,22 @@
+---
+tags:
+  - MASTER/MUSANTTA/Practicas
+  - drones/enjambre/ROS
+date: 2026-06-23
+---
 
+
+
+
+
+
+
+
+
+
+
+
+---
 
 ###### Propuesta Chaty:
 Ahora que ya tienes Action funcionando, puedes implementar un patrón mucho mejor para el enjambre:

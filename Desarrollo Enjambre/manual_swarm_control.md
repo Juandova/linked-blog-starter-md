@@ -1,5 +1,17 @@
+---
+tags:
+  - drones/enjambre/ROS
+  - MASTER/MUSANTTA/Practicas
+date: 2026-06-22
+---
 
 
+
+> [!summary]  
+> Proporciona una interfaz de control manual para un enjambre de drones utilizando el teclado. 
+
+> [!tip] Motivación 
+> Realizar pruebas rápidas del sistema sin necesidad de implementar todavía algoritmos de formación
 
 
 ```sh 

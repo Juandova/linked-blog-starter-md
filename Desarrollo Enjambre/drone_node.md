@@ -4,7 +4,8 @@ tags:
   - drones/enjambre
 date: 2026-06-17
 ---
-> [!summary] Nodo con la responsabilidad de controlar cada dron de forma individual. Recibiendo las intrucciones de control del enjambre
+> [!summary] Nodo con la responsabilidad de controlar cada dron de forma individual. 
+> Recibiendo las intrucciones de control del enjambre
 
 
 
