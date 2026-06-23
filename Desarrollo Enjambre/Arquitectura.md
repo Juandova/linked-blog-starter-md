@@ -44,3 +44,4 @@ donde:
 
 
 ![[Flujo de topics.excalidraw]]
+![[Arquitectura.canvas]]

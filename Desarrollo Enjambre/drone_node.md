@@ -86,24 +86,21 @@ prefix = `px4_0/fmu/`  (en función del dron)
 
 
 ---
-
+### Topics creados:
 > [!success]  Resultado con 3 drones: 
 
 ```
 /drone_0/in/target_pose
-/drone_0/in/target_yaw
 /drone_0/out/pose
 /drone_0/action/takeoff
 /drone_0/action/land
 
 /drone_1/in/target_pose
-/drone_1/in/target_yaw
 /drone_1/out/pose
 /drone_1/action/takeoff
 /drone_1/action/land
 
 /drone_2/in/target_pose
-/drone_2/in/target_yaw
 /drone_2/out/pose
 /drone_2/action/takeoff
 /drone_2/action/land
@@ -142,10 +139,8 @@ De esta forma, los nodos de nivel superior (`manual_swarm_control`, `swarm_manag
 ## Arquitectura
 
 ```
-              swarm_manager_node
+	            swarm_manager_node
                        │
-                       ▼
-                manual_swarm_control
                        │
        ┌───────────────┼───────────────┐
        ▼               ▼               ▼
@@ -158,11 +153,11 @@ De esta forma, los nodos de nivel superior (`manual_swarm_control`, `swarm_manag
 
 ---
 
-## Interfaz pública
+## Interfaz
 
 ### Actions
 
-Operaciones puntuales de alto nivel:
+Operaciones puntuales:
 
 ```
 /drone_N/action/takeoff
