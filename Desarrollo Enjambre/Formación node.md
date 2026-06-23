@@ -17,8 +17,6 @@ date: 2026-06-23
 msg: `swarm_pkg/msg/Formation.msg`
 
 ```msg
-uint32 num_drones  
-  
 float32 x
 float32 y
 float32 z
