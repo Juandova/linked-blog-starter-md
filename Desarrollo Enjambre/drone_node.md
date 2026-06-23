@@ -199,18 +199,17 @@ Tipo:
 swarm_pkg/msg/DronePose
 ```
 
-```text
-x
-y
-z
-yaw
+```msg title:DronePose.msg
+float32 x
+float32 y
+float32 z
+float32 yaw
 ```
 
 ---
+## Hilo de responsabilidades
 
-## Traducción de responsabilidades
-
-El `drone_node` traduce:
+El `drone_node` se encarga de:
 
 ```
 Takeoff Action
@@ -246,4 +245,4 @@ ni subscribirse a:
 /px4_x/fmu/out/*
 ```
 
-Toda interacción con PX4 debe realizarse a través de `drone_node`.
+Toda interacción con [[PX4]] debe realizarse a través de `drone_node`.
