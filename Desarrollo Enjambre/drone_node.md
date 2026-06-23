@@ -172,17 +172,13 @@ Consignas de movimiento:
 /drone_N/in/target_pose
 ```
 
-Tipo:
+Tipo: `swarm_pkg/msg/DronePose`
 
-```
-swarm_pkg/msg/DronePose
-```
-
-```
-x
-y
-z
-yaw
+```msg title:DronePose.msg
+float32 x
+float32 y
+float32 z
+float32 yaw
 ```
 
 ### Topics de salida
@@ -193,11 +189,7 @@ Estado simplificado del vehículo:
 /drone_N/out/pose
 ```
 
-Tipo:
-
-```
-swarm_pkg/msg/DronePose
-```
+Tipo: `swarm_pkg/msg/DronePose`
 
 ```msg title:DronePose.msg
 float32 x
