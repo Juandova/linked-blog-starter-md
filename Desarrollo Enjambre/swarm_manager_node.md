@@ -10,8 +10,24 @@ date: 2026-06-23
 
 
 
+## topics
+
+## Responsabilidades 
 
 
+Recibe:
+
+```
+offsets de formación
+ +
+estado del centroide
+```
+
+y calcula:
+
+```
+posición individual de cada dron
+```
 
 
 
