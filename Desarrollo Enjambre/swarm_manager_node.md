@@ -18,7 +18,7 @@ date: 2026-06-23
 
 
 ---
-
+%% ¿pa borrar?
 ###### Propuesta Chaty:
 Ahora que ya tienes Action funcionando, puedes implementar un patrón mucho mejor para el enjambre:
 
@@ -53,3 +53,5 @@ Operador    ↓Swarm Manager    ↓Drone Actions
 ```
 
 y evita tener que lanzar 9 comandos manualmente cada vez. Ahora que has conseguido que un `drone_node` funcione como servidor Action, ya tienes prácticamente resuelto el bloque más difícil.
+
+%%
