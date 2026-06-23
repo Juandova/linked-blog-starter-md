@@ -108,7 +108,6 @@ prefix = `px4_0/fmu/`  (en función del dron)
 
 
 ---
-
 ## Responsabilidad
 
 El `drone_node` es la capa de abstracción entre el sistema de enjambre y PX4.

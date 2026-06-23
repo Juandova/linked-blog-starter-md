@@ -30,3 +30,25 @@ install/
 log/
 
 .vscode/
+
+---
+```sh 
+$ ros2 interface proto px4_msgs/msg/HomePosition
+"timestamp: 0
+lat: 0.0
+lon: 0.0
+alt: 0.0
+x: 0.0
+y: 0.0
+z: 0.0
+roll: 0.0
+pitch: 0.0
+yaw: 0.0
+valid_alt: false
+valid_hpos: false
+valid_lpos: false
+manual_home: false
+update_count: 0
+
+
+```
