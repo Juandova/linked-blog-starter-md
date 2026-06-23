@@ -4,7 +4,8 @@ tags:
   - drones/enjambre/ROS
 date: 2026-06-23
 ---
-
+> [!summary]  Responsabilidad:
+> En base a [[Formación node]] y [[swarm_command_node]] calcula la posición de cada dron y manda instrucciones de movimiento a [[drone_node]]
 
 
 
