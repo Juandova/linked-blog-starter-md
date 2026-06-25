@@ -43,7 +43,7 @@ wait
 ```
 
 ```sh title:"Prueba de movimiento"
-ros2 topic pub --once /drone_0/in/target_pose geometry_msgs/msg/PoseStamped "{pose: {position: {x: 5.0, y: 0.0, z: -9.0}}}"
+ros2 topic pub --once /drone_0/in/target_pose swarm_pkg/msg/DronePose "{x: 10.0, y: 4.0, z: -3.0, yaw: 0.0}"
 ```
 
 > [!warning]  Ojo
