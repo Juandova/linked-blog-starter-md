@@ -54,7 +54,7 @@ Esta filosofía parte de que todos los drones tienen su propio eje y se manda el
  >
  $$\huge{p'\rightarrow\begin{cases}x' = r(x·\cos{(\beta)}-y·\sin{(\beta)}) \\ y'=r(y·\sin{(\beta)}+x·\cos{(\beta)})\end{cases}}$$
  >
- >Es decir, una transformada de rotación sumada al offset de las distancias:
+ >Es decir, una transformada de rotación multiplicada al offset de las distancias:
  >$$\large{\begin{pmatrix}{x'}\\{y'} \end{pmatrix}=\begin{pmatrix}{cos\beta }{-sin\beta}\\{sin\beta} {cos\beta} \end{pmatrix}· \begin{pmatrix}{x}\\{y}\end{pmatrix}}$$
  >
  >Con este cambio en el cálculo de las posiciones se consigue rotar toda la formación en bloque:
