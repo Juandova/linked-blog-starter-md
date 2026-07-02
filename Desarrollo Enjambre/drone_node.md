@@ -220,6 +220,48 @@ VehicleOdometry
 DronePose
 ```
 
+### Flujo de takeoff
+
+```
+Takeoff Action
+        │
+        ▼
+start_takeoff()
+        │
+        ▼
+prepare_offboard()
+        │
+        ▼
+publish TrajectorySetpoint
+        │
+        ▼
+PX4 acepta OFFBOARD
+        │
+        ▼
+ARM
+        │
+        ▼
+ControlState::TAKEOFF
+        │
+        ▼
+Altura alcanzada
+        │
+        ▼
+ControlState::HOLD
+```
+
+---
+## Callbacks
+
+|Callback|Responsabilidad|
+|---|---|
+|`status_cb()`|Actualiza el estado del vehículo|
+|`local_pos_cb()`|Actualiza la posición local|
+|`global_pos_cb()`|Convierte GPS → NED|
+|`odom_cb()`|Calcula el yaw|
+|`ack_cb()`|Procesa las respuestas de PX4|
+|`target_pose_cb()`|Actualiza el setpoint objetivo|
+
 ---
 
 ## Filosofía de diseño
