@@ -56,3 +56,4 @@ update_count: 0
 ros2 topic echo /px4_1/fmu/out/home_position_v1
 
 
+source ~/ros2_px4_ws/install/setup.bash 

@@ -58,7 +58,7 @@ Añadir:
 
 ```json
 {
-    "todo-tree.ripgrep": "/usr/bin/rg"
+    "todo-tree.ripgrep.ripgrep": "/usr/bin/rg"
 }
 ```
 

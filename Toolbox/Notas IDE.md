@@ -21,6 +21,7 @@ date: 2026-07-09
 | `REVIEW`     | Algo que funciona pero se quieres revisar más adelante. |
 | `QUESTION`   | cuando todavía se está diseñando algo                   |
 
+
 ---
 ### Extensiones para [[Visual Stucio Code|Visual Studio Code]]
 
