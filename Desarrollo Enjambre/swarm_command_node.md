@@ -7,7 +7,7 @@ date: 2026-06-23
 > [!summary] responsabilidad
 > Indicar cómo se tiene que mover el centroide
 
-```
+```sh
 ros2 run swarm_pkg swarm_command_node
 ```
 
