@@ -5,7 +5,7 @@ tags:
 date: 2026-06-04
 ---
 > [!summary]  
-> Recopilación de comandos utilizados habitualmente durante el desarrollo, simulación e integración de [[PX4]] con [[Gazebo]], [[ROS2]] y [[QGroundControl]].
+> Recopilación de comandos utilizados habitualmente durante el desarrollo, simulación e integración de [[PX4]] con [[Gazebo]], [[ROS 2]] y [[QGroundControl]].
 
 ---
 ## SITL con Gazebo
