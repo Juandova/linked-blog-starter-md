@@ -406,3 +406,8 @@ Reglamento de Radiocomunicacione
 Las bandas de frecuencias 880-915 MHz y 925-960 MHz se reservan para sistemas terrenales capaces de prestar servicios de comunicaciones electrónicas, de conformidad con la [Decisión de Ejecución (UE) 2022/173 de la Comisión](https://eur-lex.europa.eu/eli/dec_impl/2022/173/oj/eng), relativa a la armonización de las bandas de frecuencias de 900 MHz y 1800 MHz para los sistemas terrenales capaces de prestar servicios de comunicaciones electrónicas en la Unión
 
 - **UN-40**
+
+
+## ETSI EN 300 220
+
+https://www.etsi.org/technical-groups/erm/ 
