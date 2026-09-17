@@ -343,8 +343,44 @@ Es el paquete de mensajes ROS 2 para los nodos C++.
 
 > [!attention]  la normativa europea establece el marco de uso del espectro radioeléctrico, pero las condiciones concretas de uso en España se determinan mediante el [[CNAF]] y los interfaces radioeléctricos españoles.
 
+> [!summary]  Resumen
+> - **433MHz:** la banda que normalmente se utiliza en Europa para determinados dispositivos de corto alcance.
+> - **915 MHz:** utilización no puede darse por autorizada simplemente porque el dispositivo se venda en España.
+
 ## Europea
 
+### Decisión de Ejecución (UE) 2019/1345
 
+Decisión de Ejecución (UE) 2019/1345 de la Comisión, de 2 de agosto de 2019.
 
 ## Nacional
+
+### Resolución de 16 de marzo de 2021
+Es la **Resolución de 16 de marzo de 2021**, publicada en el BOE como **BOE-A-2021-9918**.
+
+Enlace oficial:
+- [BOE — Resolución de 16 de marzo de 2021, interfaces IR-271 a IR-282](https://www.boe.es/buscar/doc.php?id=BOE-A-2021-9918)
+	- [PDF que has encontrado](https://digital.gob.es/content/dam/portal-mtdfp/avance-digital/telecomunicacion-e-infraestructuras-digitales/areas_interes/espectro-radioelectrico/informacion-general/interfaces-radielectricos/dispositivos-corto-alcance-srd/Resolucion-271-282.pdf)
+
+
+### [[CNAF]] 2026
+
+**Orden TDF/732/2026, de 10 de julio, por la que se aprueba el Cuadro Nacional de Atribución de Frecuencias.**
+
+- [BOE — Texto oficial](https://www.boe.es/eli/es/o/2026/07/10/tdf732)
+	- [BOE — PDF](https://www.boe.es/eli/es/o/2026/07/10/tdf732/dof/spa/pdf)
+
+Fecha de publicación: 17/07/2026.
+Entrada en vigor: 18/07/2026.
+
+> página 23: 5.150: 902-928 MHz en la Región 2 (frecuencia central 915 MHz), están designadas para aplicaciones industriales, científicas y médicas (ICM). Los servicios de radiocomunicación que funcionan en estas bandas deben aceptar la interferencia perjudicial resultante de estas aplicaciones. Los equipos ICM que funcionen en estas bandas estarán sujetos a las disposiciones del número 15.13.
+
+5.314A La banda de frecuencias 698-960 MHz, o partes de la misma, en Australia,
+Corea, Maldivas, Micronesia, Papúa Nueva Guinea, Tonga y Vanuatu, la banda de
+frecuencias 703-733 MHz, 758-788 MHz, 890-915 MHz y 935-960 MHz, o partes de la
+misma, en China, India, Indonesia, Japón, Corea (Rep. de), Malasia, Filipinas y Tailandia
+se ha identificado para su utilización por estaciones en plataforma a gran altitud como
+estaciones base de las Telecomunicaciones Móviles Internacionales (IMT) (HIBS). Esta
+identificación no impide el uso de estas bandas de frecuencias por cualquier aplicación
+de los servicios a los que están atribuidas ni establece prioridad alguna en el
+Reglamento de Radiocomunicacione
