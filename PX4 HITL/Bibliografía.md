@@ -104,59 +104,48 @@ PX4 distingue dos formas de simulación sobre hardware real:
 
 PX4 documenta que **HITL utiliza un simulador externo como Gazebo Classic o jMAVSim**, mientras que SIH ejecuta un modelo físico directamente en la controladora.
 
-Esto nos da una primera decisión técnica:
+> [!info] Si  se quiere que Gazebo sea el motor físico y la Pixhawk ejecute PX4 real, la línea de investigación es HITL.
 
-> Si quieres que Gazebo sea el motor físico y la Pixhawk ejecute PX4 real, la línea de investigación es HITL.
-
-Pero hay que comprobar la compatibilidad con la versión de Gazebo que utilicemos.
+> [!attention] Pero hay que comprobar la compatibilidad con la versión de Gazebo que utilicemos.
 
 ---
-
 ## Bloque 3 — ROS 2 y micro XRCE-DDS
 
 ### 7. PX4 ROS 2 User Guide
 
 [PX4 — ROS 2 User Guide](https://docs.px4.io/main/en/ros2/user_guide?utm_source=chatgpt.com)
 
-Esta será la referencia principal para la integración ROS 2.
+Esta será la referencia principal para la integración [[ROS 2]].
 
 Investiga:
 
-- Arquitectura PX4 ↔ ROS 2.
-- uORB.
-- uXRCE-DDS.
-- Micro XRCE-DDS Client.
-- Micro XRCE-DDS Agent.
-- `px4_msgs`.
-- Publicación de tópicos.
-- Suscripción a tópicos.
-- Envío de comandos desde ROS 2.
+- [x] Arquitectura PX4 ↔ ROS 2.
+- [ ] [[uORB]].
+- [ ] [[uXRCE-DDS]].
+- [ ] [[Micro XRCE-DDS Client]].
+- [ ] [[Micro XRCE-DDS Agent]].
+- [x] [[px4_msgs]].
+- [x] Envío de comandos desde ROS 2.
 
-La arquitectura oficial utiliza un **cliente XRCE-DDS en PX4** y un **agente XRCE-DDS en el ordenador o companion computer**. La comunicación puede hacerse mediante serie, UDP, TCP u otros enlaces compatibles.
-
-Esta página es especialmente relevante para tu futuro sistema de enjambres.
+> [!info] La arquitectura oficial utiliza un **cliente XRCE-DDS en PX4** y un [[agente XRCE-DDS]] en el ordenador o companion computer. La comunicación puede hacerse mediante serie, UDP, TCP u otros enlaces compatibles.
 
 ---
-
 ### 8. uXRCE-DDS: PX4 ↔ ROS 2
 
 [uXRCE-DDS — PX4 Guide](https://docs.px4.io/main/en/middleware/uxrce_dds?utm_source=chatgpt.com)
 
-Aquí está la información que necesitamos para configurar la Pixhawk.
 
 Investiga estos apartados:
+1. [ ] Architecture.
+2. [ ] Version selection.
+3. [ ] PX4 Firmware.
+4. [ ] Starting the Client.
+5. [ ] Serial connections.
+6. [ ] Supported [[uORB Messages]].
+7. [ ] Customizing the Namespace.
 
-1. Architecture.
-2. Version selection.
-3. PX4 Firmware.
-4. Starting the Client.
-5. Serial connections.
-6. Supported uORB Messages.
-7. Customizing the Namespace.
-
-Hay un detalle importante para ti:
-
-**El cliente uXRCE-DDS no sustituye necesariamente al firmware PX4 ni convierte la Pixhawk en un dispositivo ROS 2.** Es un módulo de comunicación que expone determinados mensajes uORB a ROS 2.
+> [!attention] **El [[cliente uXRCE-DDS]] no sustituye necesariamente al [[firmware PX4]] ni convierte la [[Pixhawk]] en un dispositivo [[ROS 2]].** 
+> Es un módulo de comunicación que expone determinados mensajes [[uORB]] a [[ROS 2]].
 
 El flujo es:
 
@@ -176,19 +165,12 @@ Micro XRCE-DDS Agent
 ROS 2
 ```
 
-La documentación también indica que el cliente se incluye en la mayoría de los firmwares, pero hay que comprobarlo en el firmware concreto de la placa.
+> [!warning]  El cliente se incluye en la mayoría de los firmwares, pero hay que comprobarlo en el firmware concreto de la placa.
 
 ---
-
 ### 9. PX4 + Companion Computer + ROS 2
 
 [PX4 — Raspberry Pi Companion Computer](https://docs.px4.io/main/en/companion_computer/pixhawk_rpi?utm_source=chatgpt.com)
-
-Aunque tú vas a utilizar el portátil y no una Raspberry Pi, **esta guía es probablemente la más útil para tu primera configuración física**.
-
-¿Por qué?
-
-Porque documenta exactamente el tipo de configuración que quieres investigar:
 
 ```
 Pixhawk
@@ -207,8 +189,7 @@ Micro XRCE-DDS Agent
 ROS 2
 ```
 
-La guía explica cómo:
-
+Esta guía explica cómo:
 - Desactivar MAVLink en TELEM2.
 - Configurar `UXRCE_DDS_CFG`.
 - Configurar la velocidad serie.
@@ -216,7 +197,7 @@ La guía explica cómo:
 - Iniciar el Micro XRCE-DDS Agent.
 - Ver los tópicos ROS 2.
 
-Para la Pixhawk 6C, la documentación oficial muestra el mapeo:
+Para la [[Pixhawk 6C]], la documentación oficial muestra el mapeo:
 
 ```
 TELEM2 → /dev/ttyS3
@@ -230,17 +211,12 @@ UXRCE_DDS_CFG = 102
 SER_TEL2_BAUD = 921600
 ```
 
-Estos parámetros aparecen en la guía de PX4 para conectar ROS 2 a través de TELEM2. **No los apliques todavía:** primero tenemos que confirmar la versión de PX4 y la arquitectura HITL.
+> [!info] Estos parámetros aparecen en la guía de [[PX4]] para conectar [[ROS 2]] a través de TELEM2. 
 
 ---
-
 ## Bloque 4 — Radios SiK y telemetría
 
-Aquí hay una cuestión que debemos investigar con cuidado: **una radio SiK no es, por sí misma, una radio XRCE-DDS.**
-
-Normalmente, una radio SiK proporciona un enlace serie transparente. Lo que circula por ese enlace depende de lo que configuremos en los extremos.
-
-Por ejemplo:
+> [!summary] La investigación de este bloque consiste en comprobar si podemos transportar [[XRCE-DDS ]]por ese enlace  y qué limitaciones introduce.
 
 ```
 Pixhawk
@@ -263,24 +239,21 @@ Micro XRCE-DDS Agent
 ROS 2
 ```
 
-La investigación consiste en comprobar si podemos transportar XRCE-DDS por ese enlace serie y qué limitaciones introduce.
+> [!info] Holybro Modulo Telemetría SiK V3 915Mhz 100mW 
 
 ### 10. PX4 — MAVLink Peripherals
 
 [MAVLink Peripherals — PX4 Guide](https://docs.px4.io/main/en/peripherals/mavlink_peripherals)
 
-Esta página te interesa para comprender cómo PX4 configura sus puertos de telemetría.
+Investigar:
+- [ ] Qué es MAVLink.
+- [ ] Cómo se configura TELEM1.
+- [ ] Cómo se configura TELEM2.
+- [ ] Qué parámetros controlan MAVLink.
+- [ ] Cómo desactivar MAVLink en un puerto.
+- [ ] Qué ocurre cuando otro módulo necesita esa UART.
 
-Investiga:
-
-- Qué es MAVLink.
-- Cómo se configura TELEM1.
-- Cómo se configura TELEM2.
-- Qué parámetros controlan MAVLink.
-- Cómo desactivar MAVLink en un puerto.
-- Qué ocurre cuando otro módulo necesita esa UART.
-
-Es importante porque tu objetivo es utilizar un puerto que habitualmente se emplea para MAVLink.
+> [!important] Es importante por utilizar un puerto que habitualmente se emplea para MAVLink.
 
 ### 11. PX4 — Telemetry Radios
 
