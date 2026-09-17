@@ -17,6 +17,14 @@ sudo apt update
 sudo apt install -y ros-humble-mavros ros-humble-mavros-extras geographiclib-tools
 ```
 
+```sh title:Instalación:
+sudo apt install ros-humble-mavros
+sudo /opt/ros/humble/lib/mavros/install_geographiclib_datasets.sh
+sudo apt install ros-humble-mavros-extras
+
+sudo apt install --reinstall ros-humble-diagnostic-updater
+```
+
 Luego instala los datasets de GeographicLib::
 
 ```sh 
