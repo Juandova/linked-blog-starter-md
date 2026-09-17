@@ -271,3 +271,39 @@ Investiga:
 - Configuración de puertos.
 
 No asumiría todavía que una radio SiK de 915 MHz y 100 mW va a funcionar bien como enlace XRCE-DDS. Hay que validar el comportamiento real.
+
+---
+
+# Documentación complementaria
+
+
+### QGroundControl
+
+[QGroundControl User Guide](https://docs.qgroundcontrol.com/)
+
+- [ ] Conectar la Pixhawk.
+- [ ] Cargar firmware.
+- [ ] Modificar parámetros.
+- [ ] Consultar el estado del sistema.
+- [ ] Abrir la consola MAVLink.
+- [ ] Configurar el vehículo.
+
+### Micro XRCE-DDS Agent
+
+[Micro XRCE-DDS Agent — GitHub](https://github.com/eProsima/Micro-XRCE-DDS-Agent)
+
+- [ ] Instalación.
+- [ ] Compilación.
+- [ ] Transporte serie.
+- [ ] Transporte UDP.
+- [ ] Configuración del agente.
+- [ ] Compatibilidad con la versión de PX4 y ROS 2.
+
+### PX4 `px4_msgs`
+
+[PX4 — px4_msgs](https://github.com/PX4/px4_msgs)
+
+Es el paquete de mensajes ROS 2 para los nodos C++.
+
+> [!warning] Tendremos que asegurarnos de que las versiones de `px4_msgs` y PX4 sean compatibles.
+
