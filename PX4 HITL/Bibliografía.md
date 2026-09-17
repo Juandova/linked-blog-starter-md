@@ -337,3 +337,14 @@ Es el paquete de mensajes ROS 2 para los nodos C++.
 
 > [!warning] Tendremos que asegurarnos de que las versiones de `px4_msgs` y PX4 sean compatibles.
 
+
+---
+# Normativa 
+
+> [!attention]  la normativa europea establece el marco de uso del espectro radioeléctrico, pero las condiciones concretas de uso en España se determinan mediante el [[CNAF]] y los interfaces radioeléctricos españoles.
+
+## Europea
+
+
+
+## Nacional
