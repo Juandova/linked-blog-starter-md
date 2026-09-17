@@ -94,15 +94,13 @@ Queremos encontrar:
 
 [PX4 — Hardware Simulation](https://docs.px4.io/main/en/simulation/hardware?utm_source=chatgpt.com)
 
-Esta página merece una lectura detenida.
-
 PX4 distingue dos formas de simulación sobre hardware real:
 
-|Modalidad|Dónde se ejecuta la física|Dónde se ejecuta PX4|
-|---|---|---|
-|SITL|PC|PC|
-|HITL|PC, simulador externo|Pixhawk|
-|SIH sobre hardware|Pixhawk|Pixhawk|
+| Modalidad          | Dónde se ejecuta la física | Dónde se ejecuta PX4 |
+| ------------------ | -------------------------- | -------------------- |
+| [[SITL]]           | PC                         | PC                   |
+| [[HITL]]           | PC, simulador externo      | Pixhawk              |
+| SIH sobre hardware | Pixhawk                    | Pixhawk              |
 
 PX4 documenta que **HITL utiliza un simulador externo como Gazebo Classic o jMAVSim**, mientras que SIH ejecuta un modelo físico directamente en la controladora.
 
