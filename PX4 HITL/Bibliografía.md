@@ -353,6 +353,16 @@ Es el paquete de mensajes ROS 2 para los nodos C++.
 
 Decisión de Ejecución (UE) 2019/1345 de la Comisión, de 2 de agosto de 2019.
 
+- [EUR-lex](https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32019D1345)
+	- [PDF](https://eur-lex.europa.eu/legal-content/ES/TXT/PDF/?uri=CELEX:32019D1345)
+
+## Decisión de Ejecución (UE) 2018/1538
+
+Decisión de Ejecución (UE) 2018/1538 de la Comisión, de 11 de octubre de 2018.
+
+- [EUR-lex](https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32018D1538)
+	- [PDF](https://eur-lex.europa.eu/legal-content/ES/TXT/PDF/?uri=CELEX:32018D1538)
+
 ## Nacional
 
 ### Resolución de 16 de marzo de 2021
