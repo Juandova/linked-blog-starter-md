@@ -30,8 +30,6 @@ Investigar:
 ### 2. Holybro Pixhawk 6C
 [Holybro Pixhawk 6C — documentación oficial](https://docs.holybro.com/autopilot/pixhawk-6c)
 
-Esta documentación es importante porque no basta con saber cómo funciona PX4 en abstracto. Necesitamos conocer el hardware concreto.
-
 Investigar:
 - [ ] Procesador y memoria.
 - [ ] Puertos TELEM1 y TELEM2.
@@ -67,7 +65,6 @@ La idea es entender que un puerto físico no es automáticamente un puerto MAVLi
 [PX4 — Simulation](https://docs.px4.io/main/en/simulation/?utm_source=chatgpt.com)
 
 Diferencia entre:
-
 - [ ] [[SITL]].
 - [ ] [[HITL]].
 - [ ] Simulación con [[Gazebo]].
@@ -75,7 +72,6 @@ Diferencia entre:
 
 > [!question] ¿Cómo se conecta un [[PX4]] que se ejecuta en una [[Pixhawk 6C]] física con un simulador Gazebo que se ejecuta en el portátil?
 > No debemos dar por hecho que la respuesta sea la misma que para PX4 SITL.
-
 
 ---
 ### 5. PX4 HITL Simulation
