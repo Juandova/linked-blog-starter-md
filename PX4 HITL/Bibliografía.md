@@ -15,120 +15,85 @@ date: 2026-09-17
 [PX4 User Guide — documentación oficial](https://docs.px4.io/main/en/)
 
 Es el punto de entrada general.
-Te interesa especialmente:
-- Firmware.
-- Hardware de vuelo.
-- Configuración de la controladora.
-- Parámetros.
-- Comunicación serie.
-- Simulación.
+Investigar:
+- [ ] Firmware.
+- [ ] Hardware de vuelo.
+- [ ] Configuración de la controladora.
+- [ ] Parámetros.
+- [ ] Comunicación serie.
+- [ ] Simulación.
 
 > [!info] **Qué investigar aquí:** 
 > cómo se organiza [[PX4]], qué partes se ejecutan en la controladora y cuáles en el ordenador.
 
 ---
 ### 2. Holybro Pixhawk 6C
-
 [Holybro Pixhawk 6C — documentación oficial](https://docs.holybro.com/autopilot/pixhawk-6c)
 
 Esta documentación es importante porque no basta con saber cómo funciona PX4 en abstracto. Necesitamos conocer el hardware concreto.
 
-Investiga:
-
-- Procesador y memoria.
-- Puertos TELEM1 y TELEM2.
-- UART asociado a cada puerto.
-- Niveles eléctricos.
-- Alimentación de los periféricos.
-- Conexión USB.
-- Compatibilidad con PX4.
+Investigar:
+- [ ] Procesador y memoria.
+- [ ] Puertos TELEM1 y TELEM2.
+- [ ] UART asociado a cada puerto.
+- [ ] Niveles eléctricos.
+- [ ] Alimentación de los periféricos.
+- [ ] Conexión USB.
+- [ ] Compatibilidad con PX4.
 
 **Especialmente importante:** no debemos asumir que TELEM1 y TELEM2 corresponden a los mismos dispositivos internos que en otra Pixhawk.
 
 ---
 
 ### 3. PX4: Serial Port Configuration
-
 [PX4 — Serial Port Configuration](https://docs.px4.io/main/en/peripherals/serial_configuration)
 
 Esta será una de las páginas fundamentales para tu proyecto.
 
 Aquí se explica cómo configurar los puertos serie para diferentes funciones:
-
-- MAVLink.
-- uXRCE-DDS.
-- GPS.
-- Telemetría.
-- Otros periféricos.
+- [ ] MAVLink.
+- [ ] uXRCE-DDS.
+- [ ] GPS.
+- [ ] Telemetría.
+- [ ] Otros periféricos.
 
 La idea es entender que un puerto físico no es automáticamente un puerto MAVLink o XRCE-DDS. **Es una UART que PX4 configura mediante parámetros y módulos.**
 
 ---
-
 ## Bloque 2 — Simulación y HITL
 
 ### 4. PX4 Simulation
 
 [PX4 — Simulation](https://docs.px4.io/main/en/simulation/?utm_source=chatgpt.com)
 
-Esta es la página que debes investigar para comprender las diferentes arquitecturas.
-
 Diferencia entre:
 
-- SITL.
-- HITL.
-- Simulación con Gazebo.
-- Simulación con otros simuladores.
+- [ ] [[SITL]].
+- [ ] [[HITL]].
+- [ ] Simulación con [[Gazebo]].
+- [ ] Simulación con otros simuladores.
 
-Tu pregunta central es:
+> [!question] ¿Cómo se conecta un [[PX4]] que se ejecuta en una [[Pixhawk 6C]] física con un simulador Gazebo que se ejecuta en el portátil?
+> No debemos dar por hecho que la respuesta sea la misma que para PX4 SITL.
 
-> ¿Cómo se conecta un PX4 que se ejecuta en una Pixhawk física con un simulador Gazebo que se ejecuta en el portátil?
-
-No debemos dar por hecho que la respuesta sea la misma que para PX4 SITL.
 
 ---
-
 ### 5. PX4 HITL Simulation
 
 [PX4 — Hardware-in-the-Loop Simulation](https://docs.px4.io/main/en/simulation/hitl?utm_source=chatgpt.com)
 
-Esta es probablemente la documentación más importante para la primera fase de hardware.
-
-**Investiga esta página antes de configurar nada en la Pixhawk.**
+> [!important] Investigar esta página antes de configurar nada en la Pixhawk.
 
 Queremos encontrar:
 
-- Qué firmware utiliza la Pixhawk en HITL.
-- Qué parámetros hay que modificar.
-- Qué simuladores son compatibles.
-- Cómo se conecta la controladora al PC.
-- Qué datos se intercambian entre simulador y Pixhawk.
-- Qué limitaciones tiene HITL respecto a un vuelo real.
-
-### Punto crítico para nuestra investigación
-
-Hay que verificar si la combinación exacta:
-
-```
-Pixhawk 6C
-    +
-PX4
-    +
-Gazebo
-    +
-HITL
-    +
-ROS 2
-    +
-uXRCE-DDS
-```
-
-está soportada directamente por PX4 y Gazebo, o si hay que construir una integración adicional.
-
-No sería correcto asumir que cualquier configuración de SITL se puede convertir directamente en HITL conectando un USB.
+- [ ] Qué firmware utiliza la Pixhawk en HITL.
+- [ ] Qué parámetros hay que modificar.
+- [ ] Qué simuladores son compatibles.
+- [ ] Cómo se conecta la controladora al PC.
+- [ ] Qué datos se intercambian entre simulador y Pixhawk.
+- [ ] Qué limitaciones tiene HITL respecto a un vuelo real.
 
 ---
-
 ### 6. Hardware Simulation: SITL, HITL y SIH
 
 [PX4 — Hardware Simulation](https://docs.px4.io/main/en/simulation/hardware?utm_source=chatgpt.com)
