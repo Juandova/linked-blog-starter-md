@@ -349,6 +349,13 @@ Es el paquete de mensajes ROS 2 para los nodos C++.
 
 ## Europea
 
+### Decisión de Ejecución (UE) 2022/173 de la Comisión
+
+DECISIÓN DE EJECUCIÓN (UE) 2022/173 DE LA COMISIÓN de 7 de febrero de 2022
+
+- [EUR-lex](https://eur-lex.europa.eu/eli/dec_impl/2022/173/oj/eng)
+	- [PDF](https://eur-lex.europa.eu/legal-content/ES/TXT/PDF/?uri=CELEX:32022D0173)
+
 ### Decisión de Ejecución (UE) 2019/1345
 
 Decisión de Ejecución (UE) 2019/1345 de la Comisión, de 2 de agosto de 2019.
@@ -356,7 +363,7 @@ Decisión de Ejecución (UE) 2019/1345 de la Comisión, de 2 de agosto de 2019.
 - [EUR-lex](https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32019D1345)
 	- [PDF](https://eur-lex.europa.eu/legal-content/ES/TXT/PDF/?uri=CELEX:32019D1345)
 
-## Decisión de Ejecución (UE) 2018/1538
+### Decisión de Ejecución (UE) 2018/1538
 
 Decisión de Ejecución (UE) 2018/1538 de la Comisión, de 11 de octubre de 2018.
 
@@ -385,7 +392,7 @@ Entrada en vigor: 18/07/2026.
 
 > página 23: 5.150: 902-928 MHz en la Región 2 (frecuencia central 915 MHz), están designadas para aplicaciones industriales, científicas y médicas (ICM). Los servicios de radiocomunicación que funcionan en estas bandas deben aceptar la interferencia perjudicial resultante de estas aplicaciones. Los equipos ICM que funcionen en estas bandas estarán sujetos a las disposiciones del número 15.13.
 
-5.314A La banda de frecuencias 698-960 MHz, o partes de la misma, en Australia,
+> 5.314A La banda de frecuencias 698-960 MHz, o partes de la misma, en Australia,
 Corea, Maldivas, Micronesia, Papúa Nueva Guinea, Tonga y Vanuatu, la banda de
 frecuencias 703-733 MHz, 758-788 MHz, 890-915 MHz y 935-960 MHz, o partes de la
 misma, en China, India, Indonesia, Japón, Corea (Rep. de), Malasia, Filipinas y Tailandia
@@ -394,3 +401,8 @@ estaciones base de las Telecomunicaciones Móviles Internacionales (IMT) (HIBS).
 identificación no impide el uso de estas bandas de frecuencias por cualquier aplicación
 de los servicios a los que están atribuidas ni establece prioridad alguna en el
 Reglamento de Radiocomunicacione
+
+> **UN-41 Bandas 880-915 MHz y 925-960 MHz.**
+Las bandas de frecuencias 880-915 MHz y 925-960 MHz se reservan para sistemas terrenales capaces de prestar servicios de comunicaciones electrónicas, de conformidad con la [Decisión de Ejecución (UE) 2022/173 de la Comisión](https://eur-lex.europa.eu/eli/dec_impl/2022/173/oj/eng), relativa a la armonización de las bandas de frecuencias de 900 MHz y 1800 MHz para los sistemas terrenales capaces de prestar servicios de comunicaciones electrónicas en la Unión
+
+- **UN-40**
