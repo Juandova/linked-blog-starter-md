@@ -7,7 +7,6 @@ date: 2026-09-17
 > [!warning]  Ojo
 > Hay que tener cuidado con tutoriales antiguos que todavía hablan de Fast RTPS, versiones antiguas de Gazebo o configuraciones de PX4 que han cambiado.
 
-
 ## Bloque 1 — PX4 y la Pixhawk 6C
 
 ### 1. PX4 User Guide
@@ -62,7 +61,7 @@ La idea es entender que un puerto físico no es automáticamente un puerto MAVLi
 
 ### 4. PX4 Simulation
 
-[PX4 — Simulation](https://docs.px4.io/main/en/simulation/?utm_source=chatgpt.com)
+[PX4 — Simulation](https://docs.px4.io/main/en/simulation/)
 
 Diferencia entre:
 - [ ] [[SITL]].
@@ -76,7 +75,7 @@ Diferencia entre:
 ---
 ### 5. PX4 HITL Simulation
 
-[PX4 — Hardware-in-the-Loop Simulation](https://docs.px4.io/main/en/simulation/hitl?utm_source=chatgpt.com)
+[PX4 — Hardware-in-the-Loop Simulation](https://docs.px4.io/main/en/simulation/hitl)
 
 > [!important] Investigar esta página antes de configurar nada en la Pixhawk.
 
@@ -92,7 +91,7 @@ Queremos encontrar:
 ---
 ### 6. Hardware Simulation: SITL, HITL y SIH
 
-[PX4 — Hardware Simulation](https://docs.px4.io/main/en/simulation/hardware?utm_source=chatgpt.com)
+[PX4 — Hardware Simulation](https://docs.px4.io/main/en/simulation/hardware)
 
 PX4 distingue dos formas de simulación sobre hardware real:
 
@@ -113,7 +112,7 @@ PX4 documenta que **HITL utiliza un simulador externo como Gazebo Classic o jMAV
 
 ### 7. PX4 ROS 2 User Guide
 
-[PX4 — ROS 2 User Guide](https://docs.px4.io/main/en/ros2/user_guide?utm_source=chatgpt.com)
+[PX4 — ROS 2 User Guide](https://docs.px4.io/main/en/ros2/user_guide)
 
 Esta será la referencia principal para la integración [[ROS 2]].
 
@@ -132,7 +131,7 @@ Investiga:
 ---
 ### 8. uXRCE-DDS: PX4 ↔ ROS 2
 
-[uXRCE-DDS — PX4 Guide](https://docs.px4.io/main/en/middleware/uxrce_dds?utm_source=chatgpt.com)
+[uXRCE-DDS — PX4 Guide](https://docs.px4.io/main/en/middleware/uxrce_dds)
 
 
 Investiga estos apartados:
@@ -170,7 +169,7 @@ ROS 2
 ---
 ### 9. PX4 + Companion Computer + ROS 2
 
-[PX4 — Raspberry Pi Companion Computer](https://docs.px4.io/main/en/companion_computer/pixhawk_rpi?utm_source=chatgpt.com)
+[PX4 — Raspberry Pi Companion Computer](https://docs.px4.io/main/en/companion_computer/pixhawk_rpi)
 
 ```
 Pixhawk
@@ -255,28 +254,59 @@ Investigar:
 
 > [!important] Es importante por utilizar un puerto que habitualmente se emplea para MAVLink.
 
-### 11. PX4 — Telemetry Radios
+### 11. Holybro SiK Telemetry Radio V3 — Pixhawk 6C + XRCE-DDS
 
-PX4 — Telemetry Radios
+**Objetivo:** investigar cómo utilizar la radio Holybro SiK Telemetry Radio V3 915 MHz 100 mW como enlace de comunicación entre la Pixhawk 6C y el portátil, transportando los datos de micro XRCE-DDS para integrarlos en ROS 2.
 
-Esta es la página que debes utilizar para estudiar la conexión de las radios SiK.
+#### Hardware
 
-Investiga:
+- Controladora: Holybro Pixhawk 6C.
+- Radio embarcada: Holybro SiK Telemetry Radio V3 915 MHz 100 mW.
+- Radio terrestre: segunda unidad SiK conectada al portátil mediante USB.
+- Puerto de conexión previsto: TELEM1 o TELEM2.
 
-- Conexión física.
-- Configuración de telemetría.
-- Comunicación con QGroundControl.
-- Limitaciones de las radios.
-- Velocidades de transmisión.
-- Configuración de puertos.
+#### Documentación oficial
 
-No asumiría todavía que una radio SiK de 915 MHz y 100 mW va a funcionar bien como enlace XRCE-DDS. Hay que validar el comportamiento real.
+##### 1. Holybro SiK Telemetry Radio V3
+
+[Holybro — SiK Telemetry Radio V3](https://holybro.com/products/sik-telemetry-radio-v3)
+	Página oficial del fabricante.
+
+Investigar:
+
+- [ ] Especificaciones de la radio.
+- [ ] Conexión a Pixhawk.
+- [ ] Conexión USB al PC.
+- [ ] Firmware SiK.
+- [ ] Configuración de parámetros.
+- [ ] Manual de usuario.
+
+ ##### 2. PX4 — Holybro Telemetry Radio
+
+[PX4 — Holybro Telemetry Radio](https://docs.px4.io/main/en/telemetry/holybro_sik_radio)
+	Documentación oficial de [[PX4]] para las radios [[Holybro SiK]].
+
+Investigar:
+- [ ] Compatibilidad con controladoras Pixhawk.
+- [ ] Conexión mediante TELEM1.
+- [ ] Uso alternativo de TELEM2.
+- [ ] Conexión de la radio terrestre al PC.
+- [ ] Configuración y firmware.
+
+##### 3. PX4 — SiK Radio
+
+[PX4 — SiK Radio](https://docs.px4.io/main/en/telemetry/sik_radio)
+	Documentación general sobre radios SiK compatibles con PX4.
+
+Investigar:
+- [ ] Arquitectura de comunicación.
+- [ ] Configuración de los puertos serie.
+- [ ] Firmware.
+- [ ] Compatibilidad con PX4.
+- [ ] Limitaciones del enlace.
 
 ---
-
 # Documentación complementaria
-
-
 ### QGroundControl
 
 [QGroundControl User Guide](https://docs.qgroundcontrol.com/)
