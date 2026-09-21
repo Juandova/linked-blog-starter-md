@@ -427,6 +427,10 @@ porque la SiK Ground ahora trabaja a:
 
 ---
 
+
+
+---------
+
 # 12. Secuencia de arranque
 
 Para evitar problemas de diagnóstico, utilizar esta secuencia:
@@ -467,7 +471,7 @@ uxrce_dds_client status
 
 En el Agent debería aparecer algo parecido a:
 
-```text
+```
 create_client
 session established
 participant created
@@ -475,7 +479,7 @@ participant created
 
 Y, si la conexión funciona correctamente, esperamos posteriormente operaciones como:
 
-```text
+```
 create_topic
 create_publisher
 create_datawriter
@@ -483,13 +487,13 @@ create_datawriter
 
 En PX4 también esperamos que desaparezca:
 
-```text
+```
 RTT too high for timesync
 ```
 
 y que:
 
-```text
+```
 timesync converged: true
 ```
 
@@ -499,21 +503,21 @@ timesync converged: true
 
 Una vez establecida la sesión:
 
-```bash
+```sh
 ros2 node list
 ```
 
 y:
 
-```bash
+```sh
 ros2 topic list
 ```
 
-Deberían empezar a aparecer los tópicos de PX4.
+Deberían empezar a aparecer los tópicos de [[PX4]].
 
 Por ejemplo:
 
-```text
+```
 /fmu/out/vehicle_status
 /fmu/out/vehicle_local_position
 ...
