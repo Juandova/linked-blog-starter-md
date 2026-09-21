@@ -60,7 +60,6 @@ La idea es entender que un puerto físico no es automáticamente un puerto MAVLi
 
 [PX4 — Simulation](https://docs.px4.io/main/en/simulation/)
 
-Diferencia entre:
 - [ ] [[SITL]].
 - [ ] [[HITL]].
 - [ ] Simulación con [[Gazebo]].
