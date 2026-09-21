@@ -10,9 +10,9 @@ date: 2026-09-21
 > 
 > La configuración de fábrica habitual es **57600 baudios**.
 > 
-> Para la prueba con **[[Micro XRCE-DDS]]**, se quiere aumentar la velocidad de la interfaz serie a **115200 baudios** para reducir la latencia del enlace.
-> 
-> **Importante:** esto cambia la velocidad UART entre el equipo y la radio. No significa que la radio transmita por RF a 115200 bit/s. La velocidad RF (`AIR_SPEED`) es un parámetro independiente.
+
+> [!attention] **Importante:** 
+> esto cambia la velocidad UART entre el equipo y la radio. No significa que la radio transmita por RF a 115200 bit/s. La velocidad RF (`AIR_SPEED`) es un parámetro independiente.
 
 ---
 ## 1. Arquitectura de la prueba
@@ -69,77 +69,72 @@ Las SiK utilizan un conjunto de comandos AT similar al de un módem.
 
 El parámetro que nos interesa es:
 
-```text
+```
 S1 = SERIAL_SPEED
 ```
 
 La documentación de SiK utiliza una representación abreviada para la velocidad:
 
-```text
+```
 S1: SERIAL_SPEED=57
 ```
 
 significa:
 
-```text
+```
 57600 baud
 ```
 
 Por tanto:
 
-```text
+```
 S1: SERIAL_SPEED=115
 ```
 
 significa:
 
-```text
+```
 115200 baud
 ```
 
 ---
-
 ## 4. Configurar la SiK Ground
 
 Primero conectar la **SiK Ground Radio** al ordenador mediante USB.
 
 Comprobar el puerto:
 
-```bash
+```sh
 ls -l /dev/ttyUSB*
 ```
 
-En nuestro caso:
+> [!example] En nuestro caso:
+> ```
+>/dev/ttyUSB0
+>```
 
-```text
-/dev/ttyUSB0
-```
-
-Antes de abrirlo, asegurarse de que QGroundControl no lo está utilizando.
+Antes de abrirlo, asegurarse de que [[QGroundControl]] no lo está utilizando.
 
 Comprobar:
-
-```bash
+```sh
 sudo lsof /dev/ttyUSB0
 ```
 
 Si no aparece ningún proceso, podemos acceder al puerto.
 
 ---
-
 ## 5. Entrar en modo AT
 
 La radio debe estar conectada al ordenador utilizando **la velocidad serie actual**.
 
 Actualmente:
 
-```text
+```
 57600 baud
 ```
 
 Por ejemplo:
-
-```bash
+```sh
 screen /dev/ttyUSB0 57600
 ```
 
@@ -147,13 +142,13 @@ Esperar aproximadamente un segundo sin enviar nada.
 
 Después introducir:
 
-```text
+```
 +++
 ```
 
 La radio debería responder:
 
-```text
+```
 OK
 ```
 
@@ -165,18 +160,17 @@ OK
 > Si se escribe inmediatamente después de abrir el terminal o mientras existe tráfico, puede no entrar en modo AT.
 
 ---
-
 # 6. Comprobar la configuración actual
 
 Una vez aparezca:
 
-```text
+```
 OK
 ```
 
 ejecutar:
 
-```text
+```
 ATI5
 ```
 
@@ -184,7 +178,7 @@ Esto muestra los parámetros configurables.
 
 Debería aparecer algo parecido a:
 
-```text
+```
 S0: FORMAT=22
 S1: SERIAL_SPEED=57
 S2: AIR_SPEED=64
@@ -193,13 +187,13 @@ S2: AIR_SPEED=64
 
 Lo importante es:
 
-```text
+```
 S1: SERIAL_SPEED=57
 ```
 
 que corresponde a:
 
-```text
+```
 57600 baud
 ```
 
@@ -209,7 +203,7 @@ que corresponde a:
 
 Ejecutar:
 
-```text
+```
 ATS1=115
 ```
 
@@ -217,35 +211,34 @@ La radio debería aceptar el cambio.
 
 Después guardar la configuración:
 
-```text
+```
 AT&W
 ```
 
 Y reiniciar:
 
-```text
+```
 ATZ
 ```
 
 La configuración quedará:
 
-```text
+```
 S1: SERIAL_SPEED=115
 ```
 
 equivalente a:
 
-```text
+```
 115200 baud
 ```
 
 ---
-
 # 8. ¡Importante! La conexión del terminal dejará de funcionar
 
 Después de ejecutar:
 
-```text
+```
 ATS1=115
 AT&W
 ATZ
@@ -253,13 +246,13 @@ ATZ
 
 la radio pasa a trabajar a:
 
-```text
+```
 115200 baud
 ```
 
 Por tanto, el terminal que estaba abierto a:
 
-```text
+```
 57600
 ```
 
@@ -267,7 +260,7 @@ ya no podrá comunicarse correctamente con ella.
 
 Cerrar `screen`:
 
-```text
+```
 Ctrl+A
 K
 y
@@ -275,99 +268,98 @@ y
 
 Después volver a abrirlo a:
 
-```bash
+```
 screen /dev/ttyUSB0 115200
 ```
 
 Y volver a entrar en AT:
 
-```text
+```
 +++
 ```
 
 Finalmente comprobar:
 
-```text
+```
 ATI5
 ```
 
 y verificar:
 
-```text
+```
 S1: SERIAL_SPEED=115
 ```
 
 ---
-
 # 9. Configurar también la SiK Air
 
 Las dos radios deben utilizar la misma velocidad serie.
 
 La **SiK Air Radio** está conectada al:
 
-```text
+```
 Pixhawk 6C TELEM2
 ```
 
 Por tanto, hay que configurarla también a:
 
-```text
+```
 115200
 ```
 
-La forma más sencilla es desconectarla temporalmente del Pixhawk y conectarla mediante USB al ordenador.
+> [!tip] La forma más sencilla es desconectarla temporalmente del Pixhawk y conectarla mediante USB al ordenador.
 
 Repetir:
 
-```text
+```
 screen /dev/ttyUSB0 57600
 ```
 
 Entrar en AT:
 
-```text
+```
 +++
 ```
 
 Comprobar:
 
-```text
+```
 ATI5
 ```
 
 Cambiar:
 
-```text
+```
 ATS1=115
 ```
 
 Guardar:
 
-```text
+```
 AT&W
 ```
 
 Reiniciar:
 
-```text
+```
 ATZ
 ```
 
 Después volver a conectar a:
 
-```text
+```
 115200
 ```
 
 y verificar:
 
-```text
+```
 ATI5
 ```
 
 Debe aparecer:
 
-```text
+```
 S1: SERIAL_SPEED=115
 ```
 
@@ -377,37 +369,37 @@ S1: SERIAL_SPEED=115
 
 En la Pixhawk:
 
-```text
+```
 SER_TEL2_BAUD = 115200
 ```
 
 Desde NSH:
 
-```text
+```
 param set SER_TEL2_BAUD 115200
 ```
 
 Comprobar:
 
-```text
+```
 param show SER_TEL2_BAUD
 ```
 
 Debe mostrar:
 
-```text
+```
 SER_TEL2_BAUD: 115200
 ```
 
 La configuración de uXRCE-DDS continúa siendo:
 
-```text
+```
 UXRCE_DDS_CFG = 102
 ```
 
 porque:
 
-```text
+```
 102 = TELEM2
 ```
 
@@ -417,19 +409,19 @@ porque:
 
 En el ordenador:
 
-```bash
+```sh
 MicroXRCEAgent serial --dev /dev/ttyUSB0 -b 115200
 ```
 
 No utilizar:
 
-```bash
+```
 -b 57600
 ```
 
 porque la SiK Ground ahora trabaja a:
 
-```text
+```
 115200
 ```
 
@@ -443,13 +435,13 @@ Para evitar problemas de diagnóstico, utilizar esta secuencia:
 
 Conectar:
 
-```text
+```
 SiK Ground → USB → PC
 ```
 
 Comprobar:
 
-```bash
+```sh
 ls -l /dev/ttyUSB0
 ```
 
@@ -457,7 +449,7 @@ ls -l /dev/ttyUSB0
 
 Arrancar:
 
-```bash
+```sh
 MicroXRCEAgent serial --dev /dev/ttyUSB0 -b 115200 -v 6
 ```
 
@@ -467,7 +459,7 @@ Conectar/alimentar la Pixhawk.
 
 Comprobar:
 
-```text
+```nsh
 uxrce_dds_client status
 ```
 
