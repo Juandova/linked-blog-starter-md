@@ -9,6 +9,15 @@ uxrce_dds_client status
 
 #completar 
 
+```NuttShell
+uxrce_dds_client stop
+```
+
+```NuttShell
+uxrce_dds_client start -t serial -d /dev/ttyS3 -b p:SER_TEL2_BAUD
+```
+
+uxrce_dds_client start -t serial -d /dev/ttyS3 -b p:SER_TEL2_BAUD
 ### Configuración PX-uXRCE-Radio SiK-ROS
 
 > [!warning]  **[[uXRCE-DDS]] genera un patrón de tráfico mucho más exigente que la telemetría [[MAVLink]] tradicional**.
