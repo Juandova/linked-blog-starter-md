@@ -32,7 +32,7 @@ Investigar:
 Investigar:
 - [ ] Procesador y memoria.
 - [ ] Puertos TELEM1 y TELEM2.
-- [ ] UART asociado a cada puerto.
+	- [ ] UART asociado a cada puerto.
 - [ ] Niveles eléctricos.
 - [ ] Alimentación de los periféricos.
 - [ ] Conexión USB.
@@ -41,11 +41,8 @@ Investigar:
 **Especialmente importante:** no debemos asumir que TELEM1 y TELEM2 corresponden a los mismos dispositivos internos que en otra Pixhawk.
 
 ---
-
 ### 3. PX4: Serial Port Configuration
 [PX4 — Serial Port Configuration](https://docs.px4.io/main/en/peripherals/serial_configuration)
-
-Esta será una de las páginas fundamentales para tu proyecto.
 
 Aquí se explica cómo configurar los puertos serie para diferentes funciones:
 - [ ] MAVLink.
