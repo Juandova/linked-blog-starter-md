@@ -10,3 +10,4 @@
 - VSCode Editor (Para lectura de códigp, sino no lo detecta aunque esté en el repositorio)
 - Mind Map (Opcional)
 - Diagrams (Para leer los Draw.io en obsidian, opcional)
+
