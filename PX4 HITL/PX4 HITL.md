@@ -3,7 +3,9 @@ tags:
   - drones/autopilot/PX4
 date: 2026-09-21
 ---
-
+```NuttShell
+uxrce_dds_client status
+```
 
 #completar 
 

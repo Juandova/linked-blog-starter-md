@@ -127,6 +127,9 @@ Si no aparece ningún proceso, podemos acceder al puerto.
 
 La radio debe estar conectada al ordenador utilizando **la velocidad serie actual**.
 
+> [!warning]  Importante
+> La radio tiene que estar en silencio. Así que hay que apagar la pixhawk.
+
 Actualmente:
 
 ```
@@ -177,12 +180,24 @@ ATI5
 Esto muestra los parámetros configurables.
 
 Debería aparecer algo parecido a:
-
-```
-S0: FORMAT=22
-S1: SERIAL_SPEED=57
-S2: AIR_SPEED=64
-...
+``` title:"Resultado de ATI5"
+ATI5
+S0:FORMAT=26
+S1:SERIAL_SPEED=57
+S2:AIR_SPEED=64
+S3:NETID=25
+S4:TXPOWER=20
+S5:ECC=0
+S6:MAVLINK=1
+S7:OPPRESEND=0
+S8:MIN_FREQ=915000
+S9:MAX_FREQ=928000
+S10:NUM_CHANNELS=50
+S11:DUTY_CYCLE=100
+S12:LBT_RSSI=0
+S13:MANCHESTER=0
+S14:RTSCTS=0
+S15:MAX_WINDOW=131
 ```
 
 Lo importante es:
@@ -203,7 +218,7 @@ que corresponde a:
 
 Ejecutar:
 
-```
+```Screen
 ATS1=115
 ```
 
@@ -211,24 +226,22 @@ La radio debería aceptar el cambio.
 
 Después guardar la configuración:
 
-```
+```screen
 AT&W
 ```
 
 Y reiniciar:
 
-```
+```screen
 ATZ
 ```
 
 La configuración quedará:
-
 ```
 S1: SERIAL_SPEED=115
 ```
 
 equivalente a:
-
 ```
 115200 baud
 ```
